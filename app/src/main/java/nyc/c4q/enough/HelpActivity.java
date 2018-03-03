@@ -1,4 +1,4 @@
-package nyc.c4q.enough.fragments;
+package nyc.c4q.enough;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -21,9 +21,9 @@ public class HelpActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.main_tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText("Top Stories"));
-        tabLayout.addTab(tabLayout.newTab().setText("Times Newswire"));
-        tabLayout.addTab(tabLayout.newTab().setText("Movie Reviews"));
+        tabLayout.addTab(tabLayout.newTab().setText("Get Help"));
+        tabLayout.addTab(tabLayout.newTab().setText("Education"));
+        tabLayout.addTab(tabLayout.newTab().setText("Counseling"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.main_viewpager);
