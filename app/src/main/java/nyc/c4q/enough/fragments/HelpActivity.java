@@ -14,7 +14,7 @@ public class HelpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_help2);
+        setContentView(R.layout.activity_help);
     }
     private void initializeFragmentTabLayout() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
