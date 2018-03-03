@@ -11,14 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import nyc.c4q.enough.R;
-import retrofit2.Retrofit;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class HelpFragment extends Fragment {
     private final static String TAG = "RESULTS";
-    private RecyclerView articleRecycler;
+    private RecyclerView contactsRecycler;
     private LinearLayoutManager linearLayoutManager;
     private FloatingActionButton scrollToTop;
 
@@ -33,12 +32,11 @@ public class HelpFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_help, container, false);
-        articleRecycler = (RecyclerView) rootView.findViewById(R.id.timeswire_recycler);
+        contactsRecycler = (RecyclerView) rootView.findViewById(R.id.timeswire_recycler);
         //timeswireAdapter = new TimeswireAdapter(getContext());
         linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
-        // articleRecycler.setAdapter(timeswireAdapter);
-        articleRecycler.setHasFixedSize(true);
-        articleRecycler.setLayoutManager(linearLayoutManager);
+        contactsRecycler.setHasFixedSize(true);
+        contactsRecycler.setLayoutManager(linearLayoutManager);
 
 
         return rootView;
