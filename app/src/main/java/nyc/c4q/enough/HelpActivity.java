@@ -4,9 +4,7 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 
-import nyc.c4q.enough.R;
 import nyc.c4q.enough.controller.FragmentAdapter;
 
 public class HelpActivity extends AppCompatActivity {
@@ -46,4 +44,6 @@ public class HelpActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }
