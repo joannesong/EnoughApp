@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import nyc.c4q.enough.fragments.HelpFragment;
+import nyc.c4q.enough.help.HelpFragment;
 
 /**
  * Created by c4q on 3/3/18.
