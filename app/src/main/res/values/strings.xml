@@ -13,5 +13,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="organization">Organization</string>
     <string name="organization_website_link">Organization Website Link</string>
+    <string name="movie">Movie</string>
+    <string name="travel">Travel</string>
+    <string name="health">Health</string>
 
 </resources>
