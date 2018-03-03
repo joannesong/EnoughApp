@@ -86,28 +86,28 @@ public class GetEducatedFragment extends Fragment implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.card1:
-                Uri uri = Uri.parse("http://www.google.com"); // missing 'http://' will cause crashed
+                Uri uri = Uri.parse("http://http://www.loveisrespect.org/for-someone-else/is-my-relationship-healthy-quiz/"); // missing 'http://' will cause crashed
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
 
                 break;
 
             case R.id.card2:
-                Uri uri2 = Uri.parse("http://www.google.com"); // missing 'http://' will cause crashed
+                Uri uri2 = Uri.parse("http://http://www.loveisrespect.org/healthy-relationships/"); // missing 'http://' will cause crashed
                 Intent intent2 = new Intent(Intent.ACTION_VIEW, uri2);
                 startActivity(intent2);
 
                 break;
 
             case R.id.card3:
-                Uri uri3 = Uri.parse("http://www.google.com"); // missing 'http://' will cause crashed
+                Uri uri3 = Uri.parse("http://ncdsv.org/ncd_linkshotlines.html"); // missing 'http://' will cause crashed
                 Intent intent3 = new Intent(Intent.ACTION_VIEW, uri3);
                 startActivity(intent3);
 
                 break;
 
             case R.id.card4:
-                Uri ur4 = Uri.parse("http://www.google.com"); // missing 'http://' will cause crashed
+                Uri ur4 = Uri.parse("https://www.drphil.com/advice/an-exit-action-plan-guidelines-for-leaving-an-abusive-relationship/"); // missing 'http://' will cause crashed
                 Intent intent4 = new Intent(Intent.ACTION_VIEW, ur4);
                 startActivity(intent4);
 
