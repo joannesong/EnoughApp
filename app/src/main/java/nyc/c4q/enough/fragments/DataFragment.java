@@ -29,11 +29,10 @@ public class DataFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_data, container, false);
-
-        WomenAPIClient womenAPIClient = new WomenAPIClient();
-
         recyclerView = view.findViewById(R.id.recycler);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+
+        WomenAPIClient womenAPIClient = new WomenAPIClient(recyclerView);
 
         return view;
 
