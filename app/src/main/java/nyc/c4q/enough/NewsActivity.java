@@ -18,6 +18,8 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import nyc.c4q.enough.network.NYTAPI;
+import nyc.c4q.enough.network.NYTimesServiceGenerator;
 import nyc.c4q.enough.network.WomenAPI;
 import nyc.c4q.enough.network.WomenAPIClient;
 import nyc.c4q.enough.news.HealthFragment;
@@ -29,6 +31,8 @@ public class NewsActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private FrameLayout fragmentContainer;
+
+    public static final NYTAPI apiCallback = NYTimesServiceGenerator.createService();
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
