@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Enough</string>
+    <string name="organization">Organization</string>
+    <string name="organization_website_link">Organization Website Link</string>
+</resources>
