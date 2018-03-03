@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
@@ -9,11 +9,11 @@
   tools:context="nyc.c4q.enough.NewsActivity"
   tools:showIn="@layout/app_bar_news">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyler"
+    <FrameLayout
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    </android.support.v7.widget.RecyclerView>
 
+    </FrameLayout>
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
