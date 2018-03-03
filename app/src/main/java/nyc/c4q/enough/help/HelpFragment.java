@@ -32,8 +32,7 @@ public class HelpFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_help, container, false);
-        contactsRecycler = (RecyclerView) rootView.findViewById(R.id.timeswire_recycler);
-        //timeswireAdapter = new TimeswireAdapter(getContext());
+        contactsRecycler = rootView.findViewById(R.id.timeswire_recycler);
         linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         contactsRecycler.setHasFixedSize(true);
         contactsRecycler.setLayoutManager(linearLayoutManager);
@@ -41,7 +40,5 @@ public class HelpFragment extends Fragment {
 
         return rootView;
     }
-
-
 
 }
