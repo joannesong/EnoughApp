@@ -4,7 +4,7 @@ import android.util.Log;
 
 import java.util.List;
 
-import nyc.c4q.enough.model.Results;
+import nyc.c4q.enough.model.WomenDataResults;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
@@ -16,7 +16,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by joannesong on 3/3/18.
  */
 
-public class WomenAPIClient implements retrofit2.Callback<List<Results>>{
+public class WomenAPIClient implements retrofit2.Callback<List<WomenDataResults>>{
 
     private static HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor().setLevel(
             HttpLoggingInterceptor.Level.BODY);
@@ -33,18 +33,18 @@ public class WomenAPIClient implements retrofit2.Callback<List<Results>>{
                 .build();
 
         WomenAPI womenAPI = retrofit.create(WomenAPI.class);
-        Call<List<Results>> call = womenAPI.getResults();
+        Call<List<WomenDataResults>> call = womenAPI.getResults();
         call.enqueue(this);
     }
 
     @Override
-    public void onResponse(Call<List<Results>> call, Response<List<Results>> response) {
+    public void onResponse(Call<List<WomenDataResults>> call, Response<List<WomenDataResults>> response) {
         Log.d("response", "yay!");
 
     }
 
     @Override
-    public void onFailure(Call<List<Results>> call, Throwable t) {
+    public void onFailure(Call<List<WomenDataResults>> call, Throwable t) {
         Log.d("response", t.toString());
 
     }

@@ -6,7 +6,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import nyc.c4q.enough.R;
-import nyc.c4q.enough.model.Results;
+import nyc.c4q.enough.model.WomenDataResults;
 
 /**
  * Created by joannesong on 3/3/18.
@@ -26,15 +26,15 @@ public class WomenHelpDataVH extends RecyclerView.ViewHolder{
 
     }
 
-    public void onBind(Results results){
+    public void onBind(WomenDataResults womenDataResults){
 
-        organizationName.setText(results.getOrganizationname());
-        organizationLink.setText(results.getUrl());
+        organizationName.setText(womenDataResults.getOrganizationname());
+        organizationLink.setText(womenDataResults.getUrl());
 
         callLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //put results.getPhone in here
+                //put womenDataResults.getPhone in here
             }
         });
     }
