@@ -28,7 +28,7 @@ public class FragmentAdapter extends FragmentStatePagerAdapter {
                 return new HelpFragment();
             case 1:
                 return new GetEducatedFragment();
-            case 3:
+            case 2:
                 return new DataFragment();
             default:
                 return null;

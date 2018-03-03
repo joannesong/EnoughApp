@@ -36,6 +36,9 @@ public class HelpDataAdapter extends RecyclerView.Adapter<WomenHelpDataVH> {
 
     @Override
     public int getItemCount() {
+        if(womenResourceList == null){
+            return 0;
+        }
         return womenResourceList.size();
     }
 }
