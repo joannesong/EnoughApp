@@ -9,8 +9,11 @@
   tools:context="nyc.c4q.enough.NewsActivity"
   tools:showIn="@layout/app_bar_news">
 
-
-
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </android.support.v7.widget.RecyclerView>
 
 
 </android.support.constraint.ConstraintLayout>
