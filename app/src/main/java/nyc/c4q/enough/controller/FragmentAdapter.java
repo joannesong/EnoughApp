@@ -4,6 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import nyc.c4q.enough.education.GetEducatedFragment;
+import nyc.c4q.enough.resources.DataFragment;
 import nyc.c4q.enough.help.HelpFragment;
 
 /**
@@ -24,18 +26,18 @@ public class FragmentAdapter extends FragmentStatePagerAdapter {
         switch (position) {
             case 0:
                 return new HelpFragment();
-            /*case 1:
-                return new TimeswireFragment();
-            case 2:
-                return new MovieReviewsFragment();*/
+            case 1:
+                return new GetEducatedFragment();
+            case 3:
+                return new DataFragment();
             default:
                 return null;
         }
-
     }
 
     @Override
     public int getCount() {
          return numberOfTabs;
     }
+
 }

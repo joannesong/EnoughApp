@@ -15,18 +15,17 @@ public class HelpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help);
+        initializeFragmentTabLayout();
     }
     private void initializeFragmentTabLayout() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
-        setSupportActionBar(toolbar);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.main_tab_layout);
+        TabLayout tabLayout =  findViewById(R.id.main_tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("Get Help"));
         tabLayout.addTab(tabLayout.newTab().setText("Education"));
-        tabLayout.addTab(tabLayout.newTab().setText("Counseling"));
+        tabLayout.addTab(tabLayout.newTab().setText("Resources"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        final ViewPager viewPager = (ViewPager) findViewById(R.id.main_viewpager);
+        final ViewPager viewPager = findViewById(R.id.main_viewpager);
         FragmentAdapter fragmentAdapter = new FragmentAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(fragmentAdapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));

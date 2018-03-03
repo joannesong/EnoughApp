@@ -1,4 +1,4 @@
-package nyc.c4q.enough.fragments;
+package nyc.c4q.enough.resources;
 
 
 import android.os.Bundle;
