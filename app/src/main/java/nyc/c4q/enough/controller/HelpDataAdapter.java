@@ -10,16 +10,16 @@ import java.util.List;
 
 import nyc.c4q.enough.R;
 import nyc.c4q.enough.holder.WomenHelpDataVH;
-import nyc.c4q.enough.model.Results;
+import nyc.c4q.enough.model.WomenDataResults;
 
 /**
  * Created by joannesong on 3/3/18.
  */
 
 public class HelpDataAdapter extends RecyclerView.Adapter<WomenHelpDataVH> {
-    private List<Results> womenResourceList = new ArrayList<>();
+    private List<WomenDataResults> womenResourceList = new ArrayList<>();
 
-    public HelpDataAdapter(List<Results> womenResourceList) {
+    public HelpDataAdapter(List<WomenDataResults> womenResourceList) {
         this.womenResourceList = womenResourceList;
     }
 
