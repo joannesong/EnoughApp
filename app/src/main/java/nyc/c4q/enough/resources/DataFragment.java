@@ -9,7 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.List;
+
 import nyc.c4q.enough.R;
+import nyc.c4q.enough.controller.HelpDataAdapter;
+import nyc.c4q.enough.model.WomenDataResults;
 import nyc.c4q.enough.network.WomenAPIClient;
 
 /**
@@ -18,6 +22,7 @@ import nyc.c4q.enough.network.WomenAPIClient;
 public class DataFragment extends Fragment {
 
     private RecyclerView recyclerView;
+    private List<WomenDataResults> listWomen;
 
     public DataFragment() {
         // Required empty public constructor
@@ -31,8 +36,10 @@ public class DataFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_data, container, false);
         recyclerView = view.findViewById(R.id.recycler);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+        recyclerView.setLayoutManager(linearLayoutManager);
 
         WomenAPIClient womenAPIClient = new WomenAPIClient(recyclerView);
+        womenAPIClient.start();
 
         return view;
 
