@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="nyc.c4q.enough.fragments.HelpFragment">
+    tools:context="nyc.c4q.enough.help.HelpFragment">
     <android.support.v7.widget.RecyclerView
         android:id="@+id/timeswire_recycler"
         android:layout_width="match_parent"

@@ -1,4 +1,4 @@
-package nyc.c4q.enough.fragments;
+package nyc.c4q.enough.help;
 
 
 import android.os.Bundle;
@@ -19,12 +19,7 @@ import retrofit2.Retrofit;
 public class HelpFragment extends Fragment {
     private final static String TAG = "RESULTS";
     private RecyclerView articleRecycler;
-    //private TimeswireAdapter timeswireAdapter;
     private LinearLayoutManager linearLayoutManager;
-    private Retrofit retrofit;
-    private boolean loadMoreArticles;
-    private int offset;
-    //private static final String API_KEY = BuildConfig.API_KEY;
     private FloatingActionButton scrollToTop;
 
 
@@ -45,24 +40,10 @@ public class HelpFragment extends Fragment {
         articleRecycler.setHasFixedSize(true);
         articleRecycler.setLayoutManager(linearLayoutManager);
 
-        scrollToTop(rootView);
-
 
         return rootView;
     }
 
-    private void scrollToTop(View rootView) {
-        scrollToTop = rootView.findViewById(R.id.scroll_to_top);
-        scrollToTop.setSize(FloatingActionButton.SIZE_AUTO);
-        scrollToTop.setVisibility(View.GONE);
-
-        scrollToTop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                articleRecycler.smoothScrollToPosition(0);
-            }
-        });
-    }
 
 
 }

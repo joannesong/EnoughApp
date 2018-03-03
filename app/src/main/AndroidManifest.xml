@@ -19,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".fragments.HelpActivity"></activity>
+        <activity android:name=".HelpActivity" />
+        <activity android:name=".help.DistressMessageActivity"></activity>
     </application>
 
 </manifest>
