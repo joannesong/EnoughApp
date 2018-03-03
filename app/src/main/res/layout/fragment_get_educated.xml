@@ -1,13 +1,199 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
     tools:context="nyc.c4q.enough.education.GetEducatedFragment">
-
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/welcomeTV"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/welcome_message"
+        android:textAlignment="center"
+        android:layout_marginBottom="15dp"
+        android:text="Click the option that fits your claim"/>
 
-</FrameLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card1"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:elevation="8dp"
+                card_view:cardCornerRadius="2dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/bottom_margin_cardV"
+                android:foreground="?android:selectableItemBackground"
+                >
+
+                <LinearLayout
+                    android:id="@+id/firstlink_holder"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                   >
+
+
+                    <ImageView
+                        android:id="@+id/terrier_Image"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/ic_mood_bad_black_24dp"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/cardView_textSize"
+                        android:layout_marginLeft="@dimen/margin_leftCardV"
+                        android:gravity="center_vertical"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card2"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:elevation="8dp"
+                card_view:cardCornerRadius="2dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/bottom_margin_cardV"
+                android:foreground="?android:selectableItemBackground"
+                >
+
+                <LinearLayout
+                    android:id="@+id/secondlink_holder"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                    >
+
+
+
+                    <ImageView
+                        android:id="@+id/spaniel_Image"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/ic_launcher_background"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/cardView_textSize"
+                        android:layout_marginLeft="@dimen/margin_leftCardV"
+                        android:gravity="center_vertical"
+                        android:layout_height="match_parent"
+                        android:text="Are you in a healthy relationship?"
+
+                        />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card3"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:elevation="8dp"
+                card_view:cardCornerRadius="2dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/bottom_margin_cardV"
+                android:foreground="?android:selectableItemBackground">
+
+                <LinearLayout
+                    android:id="@+id/thirdlink_holder"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                    >
+
+
+                    <ImageView
+                        android:id="@+id/retriever_Image"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/ic_launcher_background"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/cardView_textSize"
+                        android:layout_marginLeft="@dimen/margin_leftCardV"
+                        android:gravity="center_vertical"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card4"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:elevation="8dp"
+                card_view:cardCornerRadius="2dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="@dimen/bottom_margin_cardV"
+                android:layout_gravity="center"
+                android:foreground="?android:selectableItemBackground">
+
+                <LinearLayout
+                    android:id="@+id/fourthlink_holder"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                    >
+
+
+                    <ImageView
+                        android:id="@+id/poodle_Image"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/ic_launcher_background"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/cardView_textSize"
+                        android:layout_marginLeft="@dimen/margin_leftCardV"
+                        android:gravity="center_vertical"
+                        android:layout_height="match_parent" />
+
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</LinearLayout>
