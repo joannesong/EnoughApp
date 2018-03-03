@@ -1,9 +1,12 @@
 package nyc.c4q.enough.network;
 
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import nyc.c4q.enough.controller.HelpDataAdapter;
 import nyc.c4q.enough.model.WomenDataResults;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -22,8 +25,15 @@ public class WomenAPIClient implements retrofit2.Callback<List<WomenDataResults>
             HttpLoggingInterceptor.Level.BODY);
 
     private static OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+    private RecyclerView recyclerView;
+    private List<WomenDataResults> helpWomenResources = new ArrayList<>();
 
     private static final String BASE_URL = "https://data.cityofnewyork.us/";
+
+    public WomenAPIClient(RecyclerView recyclerView) {
+        this.recyclerView = recyclerView;
+    }
+
     public void start(){
         httpClient.addInterceptor(loggingInterceptor);
 
@@ -40,7 +50,9 @@ public class WomenAPIClient implements retrofit2.Callback<List<WomenDataResults>
     @Override
     public void onResponse(Call<List<WomenDataResults>> call, Response<List<WomenDataResults>> response) {
         Log.d("response", "yay!");
-
+        helpWomenResources = response.body();
+        HelpDataAdapter helpDataAdapter = new HelpDataAdapter(helpWomenResources);
+        recyclerView.setAdapter(helpDataAdapter);
     }
 
     @Override
