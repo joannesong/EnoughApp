@@ -4,6 +4,7 @@ package nyc.c4q.enough.network;
  * Created by C4Q on 3/3/18.
  */
 
+import nyc.c4q.enough.model.NYTResults;
 import nyc.c4q.enough.model.Results;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -18,13 +19,13 @@ public interface NYTAPI {
 
 
     @GET("svc/topstories/v2/books.json")
-    Call<Results> getNYTbooks(@Query("apikey") String apikey);
+    Call<NYTResults> getNYTbooks(@Query("apikey") String apikey);
 
     @GET("svc/topstories/v2/travel.json")
-    Call<Results> getNYTtravel(@Query("apikey") String apikey);
+    Call<NYTResults> getNYTtravel(@Query("apikey") String apikey);
 
     @GET("svc/topstories/v2/fashion.json")
-    Call<Results> getNYTfashion(@Query("apikey") String apikey);
+    Call<NYTResults> getNYTfashion(@Query("apikey") String apikey);
 
 
 }
