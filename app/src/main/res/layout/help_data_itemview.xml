@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="20dp">
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -12,15 +12,19 @@
 
         <TextView
             android:id="@+id/organization_name"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/organization"/>
+            android:layout_weight="2"
+            android:text="@string/organization"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/organization_site"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/organization_website_link"/>
+            android:text="@string/organization_website_link"
+            android:textColor="@color/colorPrimary" />
+
 
     </LinearLayout>
 
@@ -29,21 +33,48 @@
         android:id="@+id/press_call_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="right"
+        android:layout_gravity="end"
+        android:gravity="end"
+        android:orientation="horizontal"
         android:paddingRight="10dp">
 
-        <ImageView
-            android:id="@+id/phone_icon"
+
+        <ImageButton
+            android:id="@+id/organization_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_phone_black_24dp"/>
+            android:background="@null"
+
+            android:src="@drawable/ic_location" />
 
         <TextView
-            android:id="@+id/call"
-            android:text="Call"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text=" "
+            android:textColor="#ffffff" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/phone_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:src="@drawable/ic_phone_black_24dp" />
+
+            <TextView
+                android:id="@+id/call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Call"
+                android:textColor="@color/colorPrimary" />
+        </LinearLayout>
+
 
     </LinearLayout>
 
