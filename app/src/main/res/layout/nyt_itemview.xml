@@ -24,7 +24,7 @@
     </ImageView>
 
     <TextView
-        android:background="#55000000"
+        android:background="#77000000"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -32,17 +32,18 @@
         android:id="@+id/title_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/black"
         android:layout_marginBottom="24dp"
-        android:padding="18dp"
-        android:shadowColor="#77000000"
-        android:shadowDx="6"
-        android:shadowDy="6"
-        android:shadowRadius="6"
+        android:padding="15dp"
+        android:shadowColor="@color/text_shadow"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
         android:fontFamily="sans-serif-thin"
         android:textAllCaps="true"
         android:text="Title Place Holder"
-        android:textColor="#FFFFFF"
-        android:textSize="17sp"
+        android:textColor="@color/light_font"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/image_view"
         app:layout_constraintEnd_toEndOf="@+id/image_view"
         app:layout_constraintHorizontal_bias="0.529"
