@@ -49,9 +49,9 @@ public class ContactsDBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         final String SQL_CREATE_CONTACTS_TABLE = "CREATE TABLE " + ContactEntries.TABLE_NAME + " (" +
                 ContactEntries._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                ContactEntries.COLUMN_NAME + "TEXT NOT NULL, " +
-                ContactEntries.COLUMN_CELL + "TEXT NOT NULL, " +
-                "UNIQUE (" + ContactEntries.COLUMN_CELL + ") +" +
+                ContactEntries.COLUMN_NAME + " TEXT NOT NULL, " +
+                ContactEntries.COLUMN_CELL + " TEXT NOT NULL, " +
+                "UNIQUE (" + ContactEntries.COLUMN_CELL + ") " +
                 " ON CONFLICT REPLACE );";
         db.execSQL(SQL_CREATE_CONTACTS_TABLE);
     }
@@ -91,7 +91,6 @@ public class ContactsDBHelper extends SQLiteOpenHelper {
                 } while (cursor.moveToNext());
             }
         }
-
         return results;
     }
 

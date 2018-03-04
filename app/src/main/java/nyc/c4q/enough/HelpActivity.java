@@ -9,6 +9,7 @@ import nyc.c4q.enough.controller.FragmentAdapter;
 
 public class HelpActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
