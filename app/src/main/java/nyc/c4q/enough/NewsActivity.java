@@ -1,7 +1,9 @@
 package nyc.c4q.enough;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -32,6 +34,8 @@ public class NewsActivity extends AppCompatActivity
     private FrameLayout fragmentContainer;
     private Toolbar toolbar;
     private int clickCount = 0;
+    private static SharedPreferences sharedPreferences;
+    private static final String SHARED_PREFS_KEY = "womenSP";
 
     public static final NYTAPI apiCallback = NYTimesServiceGenerator.createService();
     
@@ -58,6 +62,8 @@ public class NewsActivity extends AppCompatActivity
                 return true;
             }
         });
+
+        sharedPreferences = getSharedPreferences(SHARED_PREFS_KEY, Context.MODE_PRIVATE);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
