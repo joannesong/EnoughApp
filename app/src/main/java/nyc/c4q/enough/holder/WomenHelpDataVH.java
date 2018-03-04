@@ -1,5 +1,6 @@
 package nyc.c4q.enough.holder;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -12,7 +13,7 @@ import nyc.c4q.enough.model.WomenDataResults;
  * Created by joannesong on 3/3/18.
  */
 
-public class WomenHelpDataVH extends RecyclerView.ViewHolder{
+public class WomenHelpDataVH extends RecyclerView.ViewHolder {
     private TextView organizationName;
     private TextView organizationLink;
     private LinearLayout callLayout;
@@ -26,7 +27,7 @@ public class WomenHelpDataVH extends RecyclerView.ViewHolder{
 
     }
 
-    public void onBind(WomenDataResults womenDataResults){
+    public void onBind(final WomenDataResults womenDataResults){
 
         organizationName.setText(womenDataResults.getOrganizationname());
         organizationLink.setText(womenDataResults.getUrl());
@@ -35,7 +36,10 @@ public class WomenHelpDataVH extends RecyclerView.ViewHolder{
             @Override
             public void onClick(View v) {
                 //put womenDataResults.getPhone in here
+
             }
         });
+
+
     }
 }
