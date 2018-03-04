@@ -51,7 +51,7 @@ public class TopNewsFragment extends Fragment {
     }
 
     public void getTopStoriesData() {
-        Call<NYTResults> nytResultsCall = apiCallback.getNYTmovies(NYTAPI.NYT_Top_APIKey);
+        Call<NYTResults> nytResultsCall = apiCallback.getNYThome(NYTAPI.NYT_Top_APIKey);
         nytResultsCall.enqueue(new Callback<NYTResults>() {
             @Override
             public void onResponse(Call<NYTResults> call, Response<NYTResults> response) {

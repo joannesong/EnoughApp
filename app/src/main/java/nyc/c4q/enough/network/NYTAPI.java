@@ -21,8 +21,8 @@ public interface NYTAPI {
     @GET("svc/topstories/v2/travel.json")
     Call<NYTResults> getNYTtravel(@Query("apikey") String apikey);
 
-    @GET("svc/topstories/v2/fashion.json")
-    Call<NYTResults> getNYTfashion(@Query("apikey") String apikey);
+    @GET("svc/topstories/v2/home.json")
+    Call<NYTResults> getNYThome(@Query("apikey") String apikey);
 
     @GET("svc/topstories/v2/health.json")
     Call<NYTResults> getNYThealth(@Query("apikey") String apikey);
