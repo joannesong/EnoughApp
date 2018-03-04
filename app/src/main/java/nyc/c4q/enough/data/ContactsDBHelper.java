@@ -23,7 +23,7 @@ import java.util.Random;
 public class ContactsDBHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "contacts.db";
 
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     private static ContactsDBHelper dbInstance;
 
