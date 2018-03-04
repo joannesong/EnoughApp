@@ -86,14 +86,14 @@ public class GetEducatedFragment extends Fragment implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.card1:
-                Uri uri = Uri.parse("http://http://www.loveisrespect.org/for-someone-else/is-my-relationship-healthy-quiz/"); // missing 'http://' will cause crashed
+                Uri uri = Uri.parse("https://www.drphil.com/advice/quiz-are-you-in-an-abusive-relationship/"); // missing 'http://' will cause crashed
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
 
                 break;
 
             case R.id.card2:
-                Uri uri2 = Uri.parse("http://http://www.loveisrespect.org/healthy-relationships/"); // missing 'http://' will cause crashed
+                Uri uri2 = Uri.parse("https://www.drphil.com/pages/rhpt/"); // missing 'http://' will cause crashed
                 Intent intent2 = new Intent(Intent.ACTION_VIEW, uri2);
                 startActivity(intent2);
 
