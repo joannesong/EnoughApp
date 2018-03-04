@@ -50,6 +50,7 @@ public class TravelFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(rootView.getContext(), LinearLayoutManager.VERTICAL, false);
         travelRecyclerView.setLayoutManager(linearLayoutManager);
         getTravelData();
+
         return rootView;
     }
 

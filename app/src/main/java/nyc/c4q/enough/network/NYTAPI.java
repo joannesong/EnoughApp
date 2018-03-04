@@ -7,10 +7,7 @@ package nyc.c4q.enough.network;
 import nyc.c4q.enough.model.NYTResults;
 import nyc.c4q.enough.model.Results;
 import retrofit2.Call;
-import retrofit2.http.Body;
 import retrofit2.http.GET;
-import retrofit2.http.POST;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface NYTAPI {
@@ -18,14 +15,17 @@ public interface NYTAPI {
     String NYT_Top_APIKey = "d752126a9dec4034b7f3e0e71ab84825";
 
 
-    @GET("svc/topstories/v2/books.json")
-    Call<NYTResults> getNYTbooks(@Query("apikey") String apikey);
+    @GET("svc/topstories/v2/movies.json")
+    Call<NYTResults> getNYTmovies(@Query("apikey") String apikey);
 
     @GET("svc/topstories/v2/travel.json")
     Call<NYTResults> getNYTtravel(@Query("apikey") String apikey);
 
     @GET("svc/topstories/v2/fashion.json")
     Call<NYTResults> getNYTfashion(@Query("apikey") String apikey);
+
+    @GET("svc/topstories/v2/health.json")
+    Call<NYTResults> getNYThealth(@Query("apikey") String apikey);
 
 
 }
