@@ -11,7 +11,7 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/timeswire_recycler"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="316dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:padding="10dp"
@@ -23,7 +23,7 @@
     </android.support.v7.widget.RecyclerView>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/start_addContact_button"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -50,10 +50,12 @@
 
     <TextView
         android:id="@+id/distress_description_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="27dp"
-        android:textSize="20sp"
+        android:layout_width="211dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="52dp"
         android:text="@string/help_frag_desc_tv"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/timeswire_recycler" />
@@ -61,18 +63,23 @@
     <EditText
         android:id="@+id/distress_edit"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="53dp"
         android:text="@string/distress_message"
         android:textSize="10sp"
-        app:layout_constraintTop_toBottomOf="@id/distress_description_tv"/>
+        app:layout_constraintTop_toBottomOf="@id/distress_description_tv"
+        tools:layout_editor_absoluteX="16dp" />
 
     <ImageView
         android:id="@+id/edit_distress_message_iv"
         android:layout_width="24dp"
         android:layout_height="29dp"
-        android:layout_marginEnd="136dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="52dp"
         android:src="@drawable/ic_create_black_24dp"
-        app:layout_constraintLeft_toRightOf="@id/distress_description_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.765"
+        app:layout_constraintStart_toEndOf="@+id/distress_description_tv"
         app:layout_constraintTop_toBottomOf="@+id/timeswire_recycler" />
 
 

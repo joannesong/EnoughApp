@@ -6,8 +6,6 @@
     android:orientation="horizontal"
     android:layout_margin="16dp">
 
-
-
     <ImageView
         android:layout_width="65dp"
         android:layout_height="65dp"
@@ -19,7 +17,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/name_contact"
+                android:id="@+id/name_contact_itemv"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="name"
@@ -27,7 +25,7 @@
                 android:layout_weight="1"/>
 
             <TextView
-                android:id="@+id/phone_contact"
+                android:id="@+id/phone_contact_itemv"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:textSize="25sp"

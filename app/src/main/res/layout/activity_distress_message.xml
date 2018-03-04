@@ -6,4 +6,5 @@
     android:layout_height="match_parent"
     tools:context="nyc.c4q.enough.help.DistressMessageActivity">
 
+
 </android.support.constraint.ConstraintLayout>

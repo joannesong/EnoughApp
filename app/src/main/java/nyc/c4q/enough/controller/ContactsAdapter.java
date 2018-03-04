@@ -4,6 +4,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,17 +33,23 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
 
     @Override
     public void onBindViewHolder(ContactsViewHolder holder, int position) {
-
+        holder.contactName.setText(contactList.get(position).getContactName());
+        holder.phoneText.setText(contactList.get(position).getContactNumber());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return contactList == null ? 0 : contactList.size();
     }
 
     public class ContactsViewHolder extends RecyclerView.ViewHolder {
+        private TextView phoneText;
+        private TextView contactName;
+
         public ContactsViewHolder(View itemView) {
             super(itemView);
+            phoneText = itemView.findViewById(R.id.phone_contact_itemv);
+            contactName = itemView.findViewById(R.id.name_contact_itemv);
         }
     }
 }
