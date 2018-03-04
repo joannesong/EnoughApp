@@ -24,7 +24,7 @@
         </activity>
         <activity android:name=".HelpActivity" />
         <activity android:name=".help.DistressMessageActivity" />
-        <activity android:name=".AddContactActivity"></activity>
+        <activity android:name=".help.AddContactActivity"></activity>
     </application>
 
 </manifest>

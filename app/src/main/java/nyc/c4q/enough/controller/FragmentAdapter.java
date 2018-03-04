@@ -5,7 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import nyc.c4q.enough.education.GetEducatedFragment;
-import nyc.c4q.enough.resources.DataFragment;
+import nyc.c4q.enough.resources.ResourcesFragment;
 import nyc.c4q.enough.help.HelpFragment;
 
 /**
@@ -29,7 +29,7 @@ public class FragmentAdapter extends FragmentStatePagerAdapter {
             case 1:
                 return new GetEducatedFragment();
             case 2:
-                return new DataFragment();
+                return new ResourcesFragment();
             default:
                 return null;
         }

@@ -27,12 +27,12 @@ import static nyc.c4q.enough.NewsActivity.apiCallback;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MovieFragment extends Fragment {
+public class MovieNewsFragment extends Fragment {
     List<Results> movieResultsList = new ArrayList<>();
     RecyclerView recyclerView;
 
 
-    public MovieFragment() {
+    public MovieNewsFragment() {
         // Required empty public constructor
     }
 

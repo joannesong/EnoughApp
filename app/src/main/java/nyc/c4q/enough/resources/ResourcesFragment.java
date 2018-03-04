@@ -19,12 +19,12 @@ import nyc.c4q.enough.network.WomenAPIClient;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class DataFragment extends Fragment {
+public class ResourcesFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private List<WomenDataResults> listWomen;
 
-    public DataFragment() {
+    public ResourcesFragment() {
         // Required empty public constructor
     }
 
