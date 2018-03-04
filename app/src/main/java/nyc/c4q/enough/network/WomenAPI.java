@@ -14,4 +14,5 @@ public interface WomenAPI {
 
     @GET("resource/386y-9exk.json")
     Call<List<WomenDataResults>> getResults();
+
 }

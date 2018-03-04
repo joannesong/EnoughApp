@@ -7,6 +7,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.MotionEvent;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -29,6 +30,8 @@ public class NewsActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private FrameLayout fragmentContainer;
+    private Toolbar toolbar;
+    private int clickCount = 0;
 
     public static final NYTAPI apiCallback = NYTimesServiceGenerator.createService();
     
@@ -38,9 +41,23 @@ public class NewsActivity extends AppCompatActivity
         setContentView(R.layout.activity_news);
 
         fragmentContainer = findViewById(R.id.fragment_container);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        toolbar.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction() == MotionEvent.ACTION_DOWN){
+                    clickCount++;
+                }
+                else if(clickCount >= 3){
+                    Toast.makeText(getApplicationContext(), "Triple!", Toast.LENGTH_SHORT).show();
+                    clickCount = 0;
+                }
+
+                return true;
+            }
+        });
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
