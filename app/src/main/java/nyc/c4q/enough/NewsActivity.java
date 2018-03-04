@@ -48,6 +48,7 @@ public class NewsActivity extends AppCompatActivity
 
         fragmentContainer = findViewById(R.id.fragment_container);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setBackgroundColor(getResources().getColor(android.R.color.transparent));
         setSupportActionBar(toolbar);
 
         toolbar.setOnTouchListener(new View.OnTouchListener() {
