@@ -20,8 +20,6 @@ import android.widget.Toast;
 
 import nyc.c4q.enough.network.NYTAPI;
 import nyc.c4q.enough.network.NYTimesServiceGenerator;
-import nyc.c4q.enough.network.WomenAPI;
-import nyc.c4q.enough.network.WomenAPIClient;
 import nyc.c4q.enough.news.HealthFragment;
 import nyc.c4q.enough.news.MovieFragment;
 import nyc.c4q.enough.news.TopNewsFragment;

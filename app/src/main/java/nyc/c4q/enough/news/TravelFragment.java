@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import nyc.c4q.enough.R;
+import nyc.c4q.enough.model.NYTResults;
 import nyc.c4q.enough.model.Results;
 import nyc.c4q.enough.network.NYTAPI;
 import retrofit2.Call;
@@ -41,15 +42,15 @@ public class TravelFragment extends Fragment {
     }
 
     public void getTravelData(){
-        Call<Results> nytResultsCall = apiCallback.getNYTtravel(NYTAPI.NYT_Top_APIKey);
-        nytResultsCall.enqueue(new Callback<Results>() {
+        Call<NYTResults> nytResultsCall = apiCallback.getNYTtravel(NYTAPI.NYT_Top_APIKey);
+        nytResultsCall.enqueue(new Callback<NYTResults>() {
             @Override
-            public void onResponse(Call<Results> call, Response<Results> response) {
+            public void onResponse(Call<NYTResults> call, Response<NYTResults> response) {
 
             }
 
             @Override
-            public void onFailure(Call<Results> call, Throwable t) {
+            public void onFailure(Call<NYTResults> call, Throwable t) {
 
             }
         });
