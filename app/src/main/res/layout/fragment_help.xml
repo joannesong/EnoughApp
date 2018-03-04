@@ -23,6 +23,7 @@
 
     <Button
         android:id="@+id/button"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -32,9 +33,45 @@
         app:layout_constraintBottom_toTopOf="@+id/timeswire_recycler"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.945"
-        style="?android:attr/borderlessButtonStyle"
-        />
+        app:layout_constraintVertical_bias="0.945" />
+
+    <TextView
+        android:id="@+id/contacts_tv"
+        android:layout_width="204dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/timeswire_recycler"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/distress_description_tv"
+        android:layout_width="129dp"
+        android:layout_height="27dp"
+        android:text="@string/help_frag_desc_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeswire_recycler" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="193dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/distress_message"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/distress_description_tv" />
+
+    <ImageView
+        android:id="@+id/edit_distress_message_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_create_black_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeswire_recycler" />
 
 
 </android.support.constraint.ConstraintLayout>
