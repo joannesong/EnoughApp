@@ -19,6 +19,7 @@ import nyc.c4q.enough.model.WomenDataResults;
 public class HelpDataAdapter extends RecyclerView.Adapter<WomenHelpDataVH> {
     private List<WomenDataResults> womenResourceList = new ArrayList<>();
 
+
     public HelpDataAdapter(List<WomenDataResults> womenResourceList) {
         this.womenResourceList = womenResourceList;
     }
@@ -32,6 +33,7 @@ public class HelpDataAdapter extends RecyclerView.Adapter<WomenHelpDataVH> {
     @Override
     public void onBindViewHolder(WomenHelpDataVH holder, int position) {
         holder.onBind(womenResourceList.get(position));
+
     }
 
     @Override
@@ -41,4 +43,5 @@ public class HelpDataAdapter extends RecyclerView.Adapter<WomenHelpDataVH> {
         }
         return womenResourceList.size();
     }
+
 }

@@ -7,6 +7,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.MotionEvent;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -20,17 +21,17 @@ import android.widget.Toast;
 
 import nyc.c4q.enough.network.NYTAPI;
 import nyc.c4q.enough.network.NYTimesServiceGenerator;
-import nyc.c4q.enough.network.WomenAPI;
-import nyc.c4q.enough.network.WomenAPIClient;
-import nyc.c4q.enough.news.HealthFragment;
-import nyc.c4q.enough.news.MovieFragment;
+import nyc.c4q.enough.news.HealthNewsFragment;
+import nyc.c4q.enough.news.MovieNewsFragment;
 import nyc.c4q.enough.news.TopNewsFragment;
-import nyc.c4q.enough.news.TravelFragment;
+import nyc.c4q.enough.news.TravelNewsFragment;
 
 public class NewsActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private FrameLayout fragmentContainer;
+    private Toolbar toolbar;
+    private int clickCount = 0;
 
     public static final NYTAPI apiCallback = NYTimesServiceGenerator.createService();
     
@@ -40,9 +41,23 @@ public class NewsActivity extends AppCompatActivity
         setContentView(R.layout.activity_news);
 
         fragmentContainer = findViewById(R.id.fragment_container);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        toolbar.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction() == MotionEvent.ACTION_DOWN){
+                    clickCount++;
+                }
+                else if(clickCount >= 3){
+                    Toast.makeText(getApplicationContext(), "Triple!", Toast.LENGTH_SHORT).show();
+                    clickCount = 0;
+                }
+
+                return true;
+            }
+        });
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -90,24 +105,24 @@ public class NewsActivity extends AppCompatActivity
                         .commit();
                 break;
             case R.id.nav_health:
-                HealthFragment healthFragment = new HealthFragment();
+                HealthNewsFragment healthNewsFragment = new HealthNewsFragment();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction
-                        .replace(R.id.fragment_container, healthFragment)
+                        .replace(R.id.fragment_container, healthNewsFragment)
                         .commit();
                 break;
             case R.id.nav_movie:
-                MovieFragment movieFragment = new MovieFragment();
+                MovieNewsFragment movieNewsFragment = new MovieNewsFragment();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction
-                        .replace(R.id.fragment_container, movieFragment)
+                        .replace(R.id.fragment_container, movieNewsFragment)
                         .commit();
                 break;
             case R.id.nav_travel:
-                TravelFragment travelFragment = new TravelFragment();
+                TravelNewsFragment travelNewsFragment = new TravelNewsFragment();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction
-                        .replace(R.id.fragment_container, travelFragment)
+                        .replace(R.id.fragment_container, travelNewsFragment)
                         .commit();
                 break;
             case R.id.nav_help:

@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import nyc.c4q.enough.NewsActivity;
 import nyc.c4q.enough.R;
 import nyc.c4q.enough.controller.NYTadapter;
 import nyc.c4q.enough.model.NYTResults;
@@ -25,15 +24,14 @@ import retrofit2.Response;
 
 import static nyc.c4q.enough.NewsActivity.apiCallback;
 
-
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TopNewsFragment extends Fragment {
-    List<Results> topResultsList = new ArrayList<>();
+public class HealthNewsFragment extends Fragment {
+    List<Results> healthResultsList = new ArrayList<>();
     RecyclerView recyclerView;
 
-    public TopNewsFragment() {
+    public HealthNewsFragment() {
         // Required empty public constructor
     }
 
@@ -41,23 +39,24 @@ public class TopNewsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view =  inflater.inflate(R.layout.fragment_top_news, container, false);
+        // Inflate the layout for this fragment
+        View view =  inflater.inflate(R.layout.fragment_health, container, false);
 
-        recyclerView = view.findViewById(R.id.top_stories_rv);
+        recyclerView = view.findViewById(R.id.health_recycler);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
-        getTopStoriesData();
+        getHealthData();
         return view;
     }
 
-    public void getTopStoriesData() {
-        Call<NYTResults> nytResultsCall = apiCallback.getNYThome(NYTAPI.NYT_Top_APIKey);
+    public void getHealthData(){
+        Call<NYTResults> nytResultsCall = apiCallback.getNYThealth(NYTAPI.NYT_Top_APIKey);
         nytResultsCall.enqueue(new Callback<NYTResults>() {
             @Override
             public void onResponse(Call<NYTResults> call, Response<NYTResults> response) {
-                Log.d("response", "top stories...");
-                topResultsList = response.body().getResults();
-                NYTadapter nyTadapter = new NYTadapter(topResultsList);
+                Log.d("response", "yay! health");
+                healthResultsList = response.body().getResults();
+                NYTadapter nyTadapter = new NYTadapter(healthResultsList);
                 recyclerView.setAdapter(nyTadapter);
 
             }

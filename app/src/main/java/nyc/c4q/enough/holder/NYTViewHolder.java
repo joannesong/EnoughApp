@@ -39,7 +39,7 @@ public class NYTViewHolder extends RecyclerView.ViewHolder{
         article_Title.setText(results.getTitle());
 
         if (!results.getMultimedia().isEmpty())   {
-            String imgURL = results.getMultimedia().get(3).getUrl();
+            String imgURL = results.getMultimedia().get(4).getUrl();
             Glide.with(article_Image.getContext())
                     .load(imgURL)
                     //try to resize the image to make more visible

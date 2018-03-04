@@ -8,7 +8,6 @@ import java.util.List;
 
 public class NYTResults {
 
-
     private List<Results> results;
     private int num_results;
     private String last_updated;

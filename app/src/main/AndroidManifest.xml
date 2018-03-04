@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="nyc.c4q.enough">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -23,7 +24,7 @@
         </activity>
         <activity android:name=".HelpActivity" />
         <activity android:name=".help.DistressMessageActivity" />
-        <activity android:name=".AddContactActivity"></activity>
+        <activity android:name=".help.AddContactActivity"></activity>
     </application>
 
 </manifest>

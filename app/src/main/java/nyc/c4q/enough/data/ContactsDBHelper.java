@@ -2,6 +2,7 @@ package nyc.c4q.enough.data;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -12,6 +13,7 @@ import android.provider.*;
 import android.provider.ContactsContract;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -21,7 +23,7 @@ import java.util.Random;
 public class ContactsDBHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "contacts.db";
 
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     private static ContactsDBHelper dbInstance;
 
@@ -49,7 +51,7 @@ public class ContactsDBHelper extends SQLiteOpenHelper {
                 ContactEntries._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 ContactEntries.COLUMN_NAME + "TEXT NOT NULL, " +
                 ContactEntries.COLUMN_CELL + "TEXT NOT NULL, " +
-                "UNIQUE (" + ContactEntries.COLUMN_NAME + "," + ContactEntries.COLUMN_CELL + ") +" +
+                "UNIQUE (" + ContactEntries.COLUMN_CELL + ") +" +
                 " ON CONFLICT REPLACE );";
         db.execSQL(SQL_CREATE_CONTACTS_TABLE);
     }
@@ -73,5 +75,30 @@ public class ContactsDBHelper extends SQLiteOpenHelper {
         db.setTransactionSuccessful();
         db.endTransaction();
     }
+
+    public List<Contact> getContacts() {
+        List<Contact> results = new ArrayList<>();
+        Cursor cursor = getReadableDatabase().rawQuery("SELECT * FROM " + ContactEntries.TABLE_NAME, null);
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                do {
+                    {
+                        Contact contact = new Contact();
+                        contact.setContactName(cursor.getString(cursor.getColumnIndex(ContactEntries.COLUMN_NAME)));
+                        contact.setContactNumber(cursor.getString(cursor.getColumnIndex(ContactEntries.COLUMN_CELL)));
+                        results.add(contact);
+                    }
+                } while (cursor.moveToNext());
+            }
+        }
+
+        return results;
+    }
+
+    public void removeContact(Contact contact) {
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete(ContactEntries.TABLE_NAME, ContactEntries.COLUMN_CELL + " =  ?", new String[]{contact.getContactNumber()});
+    }
+
 
 }
