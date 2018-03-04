@@ -36,7 +36,6 @@ public class HelpFragment extends Fragment {
         contactsRecycler.setHasFixedSize(true);
         contactsRecycler.setLayoutManager(linearLayoutManager);
 
-
         return rootView;
     }
 

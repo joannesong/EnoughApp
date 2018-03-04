@@ -16,5 +16,7 @@
     <string name="movie">Movie</string>
     <string name="travel">Travel</string>
     <string name="health">Health</string>
+    <string name="help_frag_desc_tv">Emergency Message</string>
+    <string name="distress_message">Hey we\'ve talked about this before, I need help now</string>
 
 </resources>
