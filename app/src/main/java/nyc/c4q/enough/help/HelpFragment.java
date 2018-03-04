@@ -19,7 +19,6 @@ public class HelpFragment extends Fragment {
     private final static String TAG = "RESULTS";
     private RecyclerView contactsRecycler;
     private LinearLayoutManager linearLayoutManager;
-    private FloatingActionButton scrollToTop;
 
 
     public HelpFragment() {

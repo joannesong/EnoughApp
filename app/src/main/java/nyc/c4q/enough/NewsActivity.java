@@ -20,10 +20,10 @@ import android.widget.Toast;
 
 import nyc.c4q.enough.network.NYTAPI;
 import nyc.c4q.enough.network.NYTimesServiceGenerator;
-import nyc.c4q.enough.news.HealthFragment;
-import nyc.c4q.enough.news.MovieFragment;
+import nyc.c4q.enough.news.HealthNewsFragment;
+import nyc.c4q.enough.news.MovieNewsFragment;
 import nyc.c4q.enough.news.TopNewsFragment;
-import nyc.c4q.enough.news.TravelFragment;
+import nyc.c4q.enough.news.TravelNewsFragment;
 
 public class NewsActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -88,24 +88,24 @@ public class NewsActivity extends AppCompatActivity
                         .commit();
                 break;
             case R.id.nav_health:
-                HealthFragment healthFragment = new HealthFragment();
+                HealthNewsFragment healthNewsFragment = new HealthNewsFragment();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction
-                        .replace(R.id.fragment_container, healthFragment)
+                        .replace(R.id.fragment_container, healthNewsFragment)
                         .commit();
                 break;
             case R.id.nav_movie:
-                MovieFragment movieFragment = new MovieFragment();
+                MovieNewsFragment movieNewsFragment = new MovieNewsFragment();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction
-                        .replace(R.id.fragment_container, movieFragment)
+                        .replace(R.id.fragment_container, movieNewsFragment)
                         .commit();
                 break;
             case R.id.nav_travel:
-                TravelFragment travelFragment = new TravelFragment();
+                TravelNewsFragment travelNewsFragment = new TravelNewsFragment();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction
-                        .replace(R.id.fragment_container, travelFragment)
+                        .replace(R.id.fragment_container, travelNewsFragment)
                         .commit();
                 break;
             case R.id.nav_help:
