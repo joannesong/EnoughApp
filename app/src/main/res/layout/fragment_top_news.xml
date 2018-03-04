@@ -2,12 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="nyc.c4q.enough.news.TopNewsFragment">
+    tools:context="nyc.c4q.enough.news.TravelNewsFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/top_stories_rv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Top News Frag" />
+        android:layout_height="match_parent"/>
 
 </FrameLayout>
