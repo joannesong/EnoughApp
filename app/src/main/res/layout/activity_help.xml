@@ -22,14 +22,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/main_toolbar"
-        android:background="@drawable/pinkbackground"
+        android:background="#8e24aa"
         android:elevation="6dp"
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:tabIndicatorColor="@color/colorPrimaryDark"
+        app:tabIndicatorColor="#5c007a"
         app:tabIndicatorHeight="3dp"
         app:tabSelectedTextColor="@color/colorSelected"
-        app:tabTextColor="@color/colorPrimaryDark">
+        app:tabTextColor="#FFFFFF">
 
     </android.support.design.widget.TabLayout>
 
