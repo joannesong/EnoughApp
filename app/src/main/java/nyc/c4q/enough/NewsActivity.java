@@ -1,6 +1,7 @@
 package nyc.c4q.enough;
 
 
+import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -31,34 +32,31 @@ import nyc.c4q.enough.news.TravelNewsFragment;
 
 public class NewsActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    private static final int CAM_REQUEST=1313;
+    private static final int CAM_REQUEST = 1313;
 
-    private FrameLayout fragmentContainer;
     private Toolbar toolbar;
     private int clickCount = 0;
-    private static SharedPreferences sharedPreferences;
     private static final String SHARED_PREFS_KEY = "womenSP";
 
     public static final NYTAPI apiCallback = NYTimesServiceGenerator.createService();
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
 
-        fragmentContainer = findViewById(R.id.fragment_container);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        FrameLayout fragmentContainer = findViewById(R.id.fragment_container);
+        toolbar = findViewById(R.id.toolbar);
         toolbar.setBackgroundColor(getResources().getColor(android.R.color.transparent));
         setSupportActionBar(toolbar);
 
         toolbar.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                if(event.getAction() == MotionEvent.ACTION_DOWN){
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     clickCount++;
-                }
-                else if(clickCount >= 3){
-                    Toast.makeText(getApplicationContext(), "Triple!", Toast.LENGTH_SHORT).show();
+                } else if (clickCount >= 3) {
+                    Toast.makeText(getApplicationContext(), "Message Sent", Toast.LENGTH_SHORT).show();
                     clickCount = 0;
                 }
 
@@ -66,14 +64,14 @@ public class NewsActivity extends AppCompatActivity
             }
         });
 
-        sharedPreferences = getSharedPreferences(SHARED_PREFS_KEY, Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS_KEY, Context.MODE_PRIVATE);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent,CAM_REQUEST);
+                startActivityForResult(intent, CAM_REQUEST);
 
                 Snackbar.make(view, "Recording", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
@@ -81,8 +79,7 @@ public class NewsActivity extends AppCompatActivity
         });
 
 
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -90,7 +87,19 @@ public class NewsActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        loadMainFragment();
     }
+
+    private void loadMainFragment() {
+        TopNewsFragment topNewsFragment1 = new TopNewsFragment();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction
+                .replace(R.id.fragment_container, topNewsFragment1)
+                .commit();
+    }
+
 
     @Override
     public void onBackPressed() {
@@ -110,7 +119,7 @@ public class NewsActivity extends AppCompatActivity
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction;
 
-        switch (id){
+        switch (id) {
             case R.id.nav_topnews:
                 TopNewsFragment topNewsFragment = new TopNewsFragment();
                 fragmentTransaction = fragmentManager.beginTransaction();
