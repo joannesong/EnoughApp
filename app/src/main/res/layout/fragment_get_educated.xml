@@ -9,7 +9,7 @@
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#55000000">
+            android:foreground="#55000000">
 
                 <ImageView
                     android:id="@+id/one"
@@ -29,7 +29,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@android:color/black"
-                    android:fontFamily="sans-serif-thin"
+                    android:fontFamily="sans-serif-light"
                     android:padding="15dp"
                     android:shadowColor="@color/text_shadow"
                     android:shadowDx="1"
@@ -57,7 +57,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@android:color/black"
-                    android:fontFamily="sans-serif-thin"
+                    android:fontFamily="sans-serif-light"
                     android:padding="15dp"
                     android:shadowColor="@color/text_shadow"
                     android:shadowDx="1"
@@ -85,7 +85,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@android:color/black"
-                    android:fontFamily="sans-serif-thin"
+                    android:fontFamily="sans-serif-light"
                     android:padding="15dp"
                     android:shadowColor="@color/text_shadow"
                     android:shadowDx="1"
@@ -114,7 +114,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@android:color/black"
-                    android:fontFamily="sans-serif-thin"
+                    android:fontFamily="sans-serif-light"
                     android:padding="15dp"
                     android:shadowColor="@color/text_shadow"
                     android:shadowDx="1"
