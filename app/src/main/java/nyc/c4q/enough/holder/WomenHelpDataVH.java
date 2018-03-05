@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -19,7 +20,7 @@ import nyc.c4q.enough.model.WomenDataResults;
 public class WomenHelpDataVH extends RecyclerView.ViewHolder {
     private TextView organizationName;
     private TextView organizationLink;
-    private ImageButton organizationLocation;
+    private ImageView organizationLocation;
     private LinearLayout callLayout;
     private Context context;
 

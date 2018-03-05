@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
-    android:padding="20dp">
+    android:paddingTop="5dp"
+    android:paddingLeft="5dp">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:id="@+id/one"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/two"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="5dp">
 
         <TextView
             android:id="@+id/organization_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
             android:text="@string/organization"
             android:textSize="16sp" />
 
@@ -22,30 +31,53 @@
             android:id="@+id/organization_site"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingTop="10dp"
             android:text="@string/organization_website_link"
             android:textColor="@color/colorPrimary" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/one">
+
+        <ImageView
+            android:id="@+id/organization_location"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:src="@drawable/ic_location_on_black_24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-2dp"
+            android:text="Location"
+            android:textColor="@color/colorPrimary" />
 
     </LinearLayout>
 
 
     <LinearLayout
         android:id="@+id/press_call_layout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
+        android:layout_marginLeft="16dp"
         android:gravity="end"
         android:orientation="horizontal"
-        android:paddingRight="10dp">
+        app:layout_constraintHorizontal_weight="1"
+        android:paddingRight="10dp"
+        app:layout_constraintLeft_toRightOf="@id/two"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="0dp">
 
-
-        <ImageButton
-            android:id="@+id/organization_location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@null"
-
-            android:src="@drawable/ic_location" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -61,15 +93,18 @@
 
             <ImageView
                 android:id="@+id/phone_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
                 android:layout_weight="2"
                 android:src="@drawable/ic_phone_black_24dp" />
 
             <TextView
                 android:id="@+id/call"
+                android:paddingTop="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_weight="2"
                 android:text="Call"
                 android:textColor="@color/colorPrimary" />
@@ -78,4 +113,4 @@
 
     </LinearLayout>
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
