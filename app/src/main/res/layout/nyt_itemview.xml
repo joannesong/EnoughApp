@@ -12,14 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@mipmap/ic_launcher"
-        android:foregroundTint="#44000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:scaleType="centerCrop"
-        tools:ignore="MissingConstraints"
->
+        tools:ignore="MissingConstraints">
 
     </ImageView>
 
@@ -39,11 +37,11 @@
         android:shadowDx="1"
         android:shadowDy="1"
         android:shadowRadius="2"
-        android:fontFamily="sans-serif-thin"
+        android:fontFamily="sans-serif-light"
         android:textAllCaps="true"
         android:text="Title Place Holder"
         android:textColor="@color/light_font"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/image_view"
         app:layout_constraintEnd_toEndOf="@+id/image_view"
         app:layout_constraintHorizontal_bias="0.529"
