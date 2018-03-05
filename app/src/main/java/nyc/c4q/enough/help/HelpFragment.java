@@ -37,7 +37,6 @@ public class HelpFragment extends Fragment implements View.OnClickListener {
     private Button button;
     private List<Contact> contactList = new ArrayList<>();
 
-    private EditText distressMessage;
     private String message;
 
     private SharedPreferences sharedPreferences;
@@ -65,13 +64,7 @@ public class HelpFragment extends Fragment implements View.OnClickListener {
         button.setOnClickListener(this);
         contactsDBHelper = ContactsDBHelper.getDbInstance(getActivity());
         getContactsListFromDB();
-        distressMessage = rootView.findViewById(R.id.distress_edit);
-        message = distressMessage.getText().toString();
 
-        sharedPreferences = getContext().getSharedPreferences(SHARED_PREFS_KEY, Context.MODE_PRIVATE);
-        editor = sharedPreferences.edit();
-        editor.putString("message", message);
-        editor.apply();
 
         return rootView;
     }
